@@ -1,0 +1,32 @@
+[flake8]
+select = B,B9,BLK,C,E,F,I,S,TYP,W
+# B = Bugbear's non-opinionated bugs/designs
+# B9 = Bugbear's opinionated bugs/designs
+# BLK = Black
+# C = mccabe, code complexity
+# W = pycodestyle, PEP8
+# F = pyflake, invalid python
+# I = Import, see application-import-names
+# S = Bandit, security issues
+# TYP = flake-annotations, typing
+# W = pycodestyle, PEP8
+
+ignore = E203,E501,W503
+# E203, ignore whitespace before ':'
+# E501, in-built max line-length -> using Bugbear
+# W503, ignore line break before binary operator
+
+max-line-length = 100
+# Bugbear's max line-length
+
+max-complexity = 10
+# Mccabe's code complexity
+
+application-import-names = hypermodern_python,tests
+# For I, what package names considered local
+import-order-style = google
+# For I, seperating imports into Standard, Third-Party, Local
+
+per-file-ignores = tests/*:S101
+# Conflict from Bandit to Pytest over asserts
+# See https://cjolowicz.github.io/posts/hypermodern-python-03-linting/
