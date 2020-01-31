@@ -1,9 +1,11 @@
 [flake8]
-select = B,B9,BLK,C,E,F,I,S,TYP,W
+select = B,B9,BLK,C,D,DAR,E,F,I,S,TYP,W
 # B = Bugbear's non-opinionated bugs/designs
 # B9 = Bugbear's opinionated bugs/designs
 # BLK = Black
 # C = mccabe, code complexity
+# D = flake8-docstrings, documentation linting
+# DAR = darglint, check for matching function definition
 # W = pycodestyle, PEP8
 # F = pyflake, invalid python
 # I = Import, see application-import-names
@@ -30,3 +32,6 @@ import-order-style = google
 per-file-ignores = tests/*:S101
 # Conflict from Bandit to Pytest over asserts
 # See https://cjolowicz.github.io/posts/hypermodern-python-03-linting/
+
+docstring-convention = google
+# Flake8-docstrings linting style
